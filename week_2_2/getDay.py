@@ -10,8 +10,11 @@ year = int(year)
 month = int(month)
 day = int(day)
 
+
 month_day_count = [31, get_leapyear(
     year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+days = ["Sunday", "Monday", "Tuesday",
+        "Wednesday", "Thursday", "Friday", "Saturday"]
 total_days = 0
 
 # 입력 년도 전년도까지의 전체 일수를 구한다.
@@ -27,20 +30,6 @@ for m in range(1, month):
 total_days += day
 
 ans_number = total_days % 7
-
-if ans_number == 1:
-    ans_str = "Monday"
-elif ans_number == 2:
-    ans_str = "Tuesday"
-elif ans_number == 3:
-    ans_str = "Wednesday"
-elif ans_number == 4:
-    ans_str = "Thursday"
-elif ans_number == 5:
-    ans_str = "Friday"
-elif ans_number == 6:
-    ans_str = "Saturday"
-else:
-    ans_str = "Sunday"
+ans_str = days[ans_number]
 
 print("%d년 %d월 %d일은 %s입니다." % (year, month, day, ans_str))
